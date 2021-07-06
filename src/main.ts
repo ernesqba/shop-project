@@ -6,7 +6,7 @@ import { AppModule } from './app.module';
 import { ErrorsInterceptor } from './core/interceptors/error.interceptor';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   // global middlewares
   app.use(helmet());

@@ -39,4 +39,13 @@ export class CategoryService {
     });
     return category;
   }
+
+  async getFatherCategories(): Promise<Category[]> {
+    const categories = await this.categoryRepository.findAll<Category>({
+      where: {
+        CategoryId: null,
+      },
+    });
+    return categories;
+  }
 }

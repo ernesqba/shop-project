@@ -36,6 +36,11 @@ export class CategoryController {
     return this.categoryService.getCategories();
   }
 
+  @Get('/father')
+  async getFatherCategories(): Promise<Category[]> {
+    return this.categoryService.getFatherCategories();
+  }
+
   @Get(':id')
   async getCategoryById(
     @Param('id', ParseIntPipe) id: number,
